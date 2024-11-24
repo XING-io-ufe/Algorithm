@@ -64,7 +64,7 @@ class Queue {
 
     dequeue() {
         if (this.size === 0) {
-            throw new Error('Queue is empty');
+            throw new Error('hooson baina');
         }
         const item = this.list.remove();
         this.size--;
@@ -77,14 +77,14 @@ class Queue {
 
     getHead() {
         if (this.size === 0) {
-            throw new Error('Queue is empty');
+            throw new Error('hooson baina');
         }
         return this.list.head.value;
     }
 
     getTail() {
         if (this.size === 0) {
-            throw new Error('Queue is empty');
+            throw new Error('hooson baina');
         }
         return this.list.tail.value;
     }
