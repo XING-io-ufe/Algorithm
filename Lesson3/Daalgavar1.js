@@ -20,6 +20,8 @@ function bubbleSort(arr) {
         }
     }
 }
+// 
+// O(n^2)
 
 function cocktailShakerSort(arr) {
     let swapped = true;
@@ -29,7 +31,7 @@ function cocktailShakerSort(arr) {
     while (swapped) {
         swapped = false;
 
-        // Сэгсрэх (forward pass)
+        // зүүнээс баруун
         for (let i = start; i < end; i++) {
             if (arr[i] > arr[i + 1]) {
                 swap(arr, i, i + 1);
@@ -38,7 +40,7 @@ function cocktailShakerSort(arr) {
         }
         if (!swapped) break;
 
-        // Сэгсрэх (backward pass)
+        // баруунаас зүүнx
         swapped = false;
         end--;
 
@@ -52,15 +54,16 @@ function cocktailShakerSort(arr) {
     }
 }
 
-let arr1 = [64, 25, 12, 22, 11];
-let arr2 = [64, 25, 12, 22, 11];
+let arr = [64, 25, 12, 22, 11, 57,
+
+    34, 19, 26, 90, 56, 34, 59, 60, 87];
 
 console.time('Bubble Sort');
-bubbleSort(arr1);
+bubbleSort(arr);
 console.timeEnd('Bubble Sort');
-console.log('Bubble Sorted Array:', arr1);
+console.log('Bubble Sorted Array:', arr);
 
 console.time('Cocktail Shaker Sort');
-cocktailShakerSort(arr2);
+cocktailShakerSort(arr);
 console.timeEnd('Cocktail Shaker Sort');
-console.log('Cocktail Shaker Sorted Array:', arr2);
+console.log('Cocktail Shaker Sorted Array:', arr);
