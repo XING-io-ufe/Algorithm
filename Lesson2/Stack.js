@@ -1,14 +1,21 @@
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
 class LinkedList {
     constructor() {
         this.head = null;
         this.size = 0;
     }
 
-    insert(index, value) {
+    insert(index, item) {
+        const newNode = new Node(item);
         if (index < 0 || index > this.size) {
             throw new Error('Index out of bounds');
         }
-        const newNode = { value, next: null };
         if (index === 0) {
             newNode.next = this.head;
             this.head = newNode;
@@ -62,36 +69,37 @@ class LinkedList {
 class Stack {
     constructor() {
         this.list = new LinkedList();
-        this.top = -1; // Стект байгаа хамгийн дээд индекс
+        this.top = -1; // Initialize top to -1, indicating an empty stack
     }
 
     getTop() {
         if (this.top < 0) {
-            return new Error('Stack is empty');
+            throw new Error('Stack is empty');
         }
         return this.list.get(this.top);
     }
 
     push(item) {
-        this.top++; // Дээд индексийг нэмэгдүүлж байна
-        this.list.insert(this.top, item); // Шинэ элемент оруулж байна
+        this.top++; // Increment top to point to the new top index
+        this.list.insert(this.top, item); // Insert the new item at the top index
     }
 
     pop() {
         if (this.top < 0) {
-            return new Error('Stack is empty');
+            throw new Error('Stack is empty');
         }
-        const poppedValue = this.list.remove(this.top); // Дээд элемент устгаж байна
-        this.top--; // Дээд индекст бууруулах
-        return poppedValue; // Устгасан элементийг буцаана
+        const poppedValue = this.list.remove(this.top); // Remove the item at the top index
+        this.top--; // Decrement top to point to the new top index
+        return poppedValue; // Return the removed value
     }
 
     getSize() {
-        return this.list.getSize(); // Стект байгаа элементүүдийн тоог буцаана
+        return this.list.getSize(); // Return the size of the linked list
     }
 }
 
-// Жишээ ашиглалт:
+
+// Example usage:
 const stack = new Stack();
 stack.push(1);
 stack.push(2);
@@ -99,4 +107,8 @@ console.log(stack.getTop()); // 2
 console.log(stack.pop()); // 2
 console.log(stack.getSize()); // 1
 console.log(stack.pop()); // 1
-console.log(stack.pop()); // Error: Stack is empty
+try {
+    console.log(stack.pop()); // Error: Stack is empty
+} catch (error) {
+    console.error(error.message);
+}
