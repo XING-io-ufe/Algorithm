@@ -68,5 +68,3 @@ result.insert(1, "saihan");
 result.insert(2, "torbold");
 console.log(result.getSize());
 console.log(result.get(0));
-const hariu = new Node('swnsjj')
-console.log(hariu);

@@ -81,13 +81,18 @@ class DoubleLinkedList {
 }
 
 
-const dll = new DoubleLinkedList();
-dll.insert(0, 'A');
-dll.insert(1, 'B');
-dll.insert(1, 'C');
-console.log(dll.get(0));
-console.log(dll.get(1));
-console.log(dll.get(2));
-dll.delete(1);
-console.log(dll.get(0));
-console.log(dll.getSize()); 
+const DoubleList = new DoubleLinkedList();
+
+DoubleList.insert(0, "One");
+DoubleList.insert(1, "two");
+DoubleList.insert(2, "three");
+
+console.log(DoubleList.get(0));
+console.log(DoubleList.get(1));
+console.log(DoubleList.get(2));
+
+DoubleList.delete(1);
+
+console.log(DoubleList.get(0));
+console.log(DoubleList.get(1));
+console.log(DoubleList.getSize()); 

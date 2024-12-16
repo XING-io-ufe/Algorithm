@@ -20,8 +20,7 @@ function bubbleSort(arr) {
         }
     }
 }
-// 
-// O(n^2)
+
 
 function cocktailShakerSort(arr) {
     let swapped = true;
@@ -54,9 +53,7 @@ function cocktailShakerSort(arr) {
     }
 }
 
-let arr = [64, 25, 12, 22, 11, 57,
-
-    34, 19, 26, 90, 56, 34, 59, 60, 87];
+let arr = [64, 25, 59, 60, 87];
 
 console.time('Bubble Sort');
 bubbleSort(arr);

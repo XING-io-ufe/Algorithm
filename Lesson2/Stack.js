@@ -107,8 +107,3 @@ console.log(stack.getTop()); // 2
 console.log(stack.pop()); // 2
 console.log(stack.getSize()); // 1
 console.log(stack.pop()); // 1
-try {
-    console.log(stack.pop()); // Error: Stack is empty
-} catch (error) {
-    console.error(error.message);
-}
